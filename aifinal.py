@@ -4,7 +4,7 @@ import requests
 
 app = Flask(__name__)
 
-api_key = "TOKEN_HERE"
+api_key = "TOKEN GOES HERE"
 
 genai.configure(api_key=api_key)
 
@@ -39,7 +39,7 @@ def get_date():
 @app.route('/', methods=['GET', 'POST'])
 def index():
     global symbols
-    date = '2024-06-03'  # Default date
+    date = get_date()
 
     if request.method == 'POST':
         date = request.form.get('date')
@@ -146,7 +146,7 @@ def new_page():
 
 
 def nstock(date):
-    api_key = 'TOKEN_HERE' ## TOKEN_HERE
+    api_key = 'TOKEN GOES HERE'
     prices = []
 
     for symbol in symbols:
